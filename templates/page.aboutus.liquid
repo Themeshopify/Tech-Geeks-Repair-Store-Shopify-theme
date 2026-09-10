@@ -28,10 +28,22 @@
 
     <div class="lower-line"></div>
 
-    <img src="{{ 'motherboard.jpg' | | asset_url }}" width="978px" height="408px" />
-    <img src="{{ 'code.jpg' | | asset_url }}" width="978px" height="408px" />
+    <img src="{{ 'motherboard.jpg' | asset_url }}" width="978px" height="408px" />
+    <img src="{{ 'code.jpg' | asset_url }}" width="978px" height="408px" />
     </div>
 
     {% include 'Footer' %}
 </body>
-</html>
+</html>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{{ 'motherboard.jpg' | | asset_url }}"
+  to: "{{ 'motherboard.jpg' | asset_url }}"
+  position: 1153..1188
+- from: "{{ 'code.jpg' | | asset_url }}"
+  to: "{{ 'code.jpg' | asset_url }}"
+  position: 1236..1264
+{%- endcomment -%}
